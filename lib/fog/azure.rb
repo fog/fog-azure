@@ -1,9 +1,15 @@
 require 'fog/azure/version'
-
-module Fog
-  module AZURE
-  end
-end
-
 require 'fog/azure/core'
 require 'fog/azure/compute'
+
+module Fog
+  module Azure
+    extend Fog::Provider
+
+    service(:compute, 'Compute')
+  end
+
+  module Compute
+    autoload :azure, 'fog/compute/azure'
+  end
+end
