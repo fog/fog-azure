@@ -2,11 +2,6 @@
 
 Module for the 'fog' gem to support Windows Azure
 
-## Help Needed
-
-This gem needs a maintainer. If you want to work on it, please contact
-[@jeffmendoza](mailto:jemendoz@microsoft.com) or [@ranjan](mailto:ranjankumar188@gmail.com)
-
 ## Installation
 
 Add this line to your application's Gemfile:
