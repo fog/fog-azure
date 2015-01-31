@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "fog-azure"
   spec.version       = Fog::AZURE::VERSION
   spec.authors       = ["Jeff Mendoza", "Ranjan Kumar"]
-  spec.email         = ["jemendoz@microsoft.com", "ranjankumar188@gmail.com"]
+  spec.email         = ["jlm@jlm.name", "ranjankumar188@gmail.com"]
   spec.summary       = %q{Module for the 'fog' gem to support Azure cloud services.}
   spec.description   = %q{This library can be used as a module for `fog` or as standalone provider
                         to use the Azure cloud services in applications..}
