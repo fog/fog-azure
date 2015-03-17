@@ -29,7 +29,7 @@ module Fog
       end
 
       class Mock
-        def delete_virtual_machine
+        def delete_virtual_machine(vm_name, cloud_service_name)
           nil
         end
       end
