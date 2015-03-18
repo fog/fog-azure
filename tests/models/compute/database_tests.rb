@@ -25,14 +25,12 @@ Shindo.tests("Fog::Compute[:azure] | database model", ["azure", "compute"]) do
 
   tests("The database model should") do
     db  = service.databases.all.first
-    puts "The database class: #{db.class}"
     tests("have the actions") do
       test("destroy") { db.respond_to? "destroy" }
       test("firewall_rules") { db.respond_to? "firewall_rules" }
     end
 
     tests("have attributes") do
-      model_attribute_hash = db.attributes
       attributes = [
         :name,
         :feature_name,
@@ -46,5 +44,9 @@ Shindo.tests("Fog::Compute[:azure] | database model", ["azure", "compute"]) do
         end
       end
     end
+  end
+
+  tests("The database model without mocking should") do
+    pending if Fog.mocking?
   end
 end
