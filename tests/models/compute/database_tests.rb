@@ -28,26 +28,23 @@ Shindo.tests("Fog::Compute[:azure] | database model", ["azure", "compute"]) do
     puts "The database class: #{db.class}"
     tests("have the action") do
       test("destroy") { db.respond_to? "destroy" }
+      test("destroy") { db.respond_to? "firewall_rules" }
     end
-=begin
+
     tests("have attributes") do
-      model_attribute_hash = image.attributes
+      model_attribute_hash = db.attributes
       attributes = [
         :name,
-        :os_type
+        :feature_name,
+        :feature_value,
+        :location
       ]
-      tests("The image model should respond to") do
+      tests("The database model should respond to") do
         attributes.each do |attribute|
-          test("#{attribute}") { image.respond_to? attribute }
-        end
-      end
-      tests("The attributes hash should have key") do
-        attributes.each do |attribute|
-          test("#{attribute}") { model_attribute_hash.key? attribute }
+          test("#{attribute}") { db.respond_to? attribute }
         end
       end
     end
-=end
   end
 
 end

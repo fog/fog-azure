@@ -43,12 +43,6 @@ module Fog
         def create(login, password, location)
           service.create_database(login, password, location)
         end
-
-        def get(identity)
-          # all.find { |f| f.name == identity }
-        rescue Fog::Errors::NotFound
-          nil
-        end
       end
     end
   end

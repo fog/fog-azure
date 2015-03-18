@@ -34,6 +34,11 @@ module Fog
           requires :name
           service.delete_database(name)
         end
+
+        def firewall_rules
+          requires :name
+          service.firewall_rules(name)
+        end
       end
     end
   end

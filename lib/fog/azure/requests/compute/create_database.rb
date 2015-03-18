@@ -33,6 +33,8 @@ module Fog
           db = ::Azure::SqlDatabaseManagement::SqlDatabase.new
           db.name = 'Mock Database'
           db.location = 'location'
+          db.feature_name = 'Mock Database'
+          db.feature_value = 'value'
           db
         end
       end
