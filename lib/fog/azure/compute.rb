@@ -43,6 +43,7 @@ module Fog
       request :list_images
       request :list_databases
       request :create_database
+      request :delete_database
 
       model_path "fog/azure/models/compute"
       model :server

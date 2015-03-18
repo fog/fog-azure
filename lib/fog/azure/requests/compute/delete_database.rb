@@ -23,18 +23,13 @@ module Fog
   module Compute
     class Azure
       class Real
-        def list_databases
-          @db_svc.list_databases
+        def delete_database(name)
+          @db_svc.delete_server(login, password, location)
         end
       end
 
       class Mock
-        def list_databases
-          db = ::Azure::SqlDatabaseManagement::SqlDatabase.new
-          db.name = 'Mock Database'
-          db.location = 'US East'
-          db.feature_name = 'feature name'
-          [db]
+        def delete_database(name)
         end
       end
     end
