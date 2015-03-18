@@ -41,6 +41,7 @@ module Fog
       request :shutdown_server
       request :start_server
       request :list_images
+      request :list_databases
 
       model_path "fog/azure/models/compute"
       model :server
@@ -49,6 +50,8 @@ module Fog
       collection :storage_accounts
       model :image
       collection :images
+      model :database
+      collection :databases
 
       class Mock
         def initialize(options={})
@@ -78,6 +81,7 @@ module Fog
           @vm_svc = ::Azure::VirtualMachineManagementService.new
           @stg_svc = ::Azure::StorageManagementService.new
           @image_svc = ::Azure::VirtualMachineImageManagementService.new
+          @db_svc = ::Azure::SqlDatabaseManagementService.new
         end
       end
     end
