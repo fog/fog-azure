@@ -29,6 +29,7 @@ module Fog
         attribute :feature_name
         attribute :feature_value
         attribute :location
+        attribute :administrator_login
 
         def destroy
           requires :name

@@ -24,16 +24,16 @@ Shindo.tests("Fog::Compute[:azure] | database request", ["azure", "compute"]) do
   tests("#list_db_servers") do
     databases = Fog::Compute[:azure].databases
 
-    test "returns an Array" do
+    test "returns an Array of Database objects" do
       databases.is_a? Array
     end
 
-    test "returns all databases" do
-      databases.all().is_a? Array
+    test "returns all databases as an array" do
+      databases.all.is_a? Array
     end
 
     test("should return valid database name") do
-      databases.all().first.name.is_a? String
+      databases.all.first.name.is_a? String
      end
 
     test("should create a new database") do

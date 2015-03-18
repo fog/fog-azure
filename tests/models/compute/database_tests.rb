@@ -26,9 +26,9 @@ Shindo.tests("Fog::Compute[:azure] | database model", ["azure", "compute"]) do
   tests("The database model should") do
     db  = service.databases.all.first
     puts "The database class: #{db.class}"
-    tests("have the action") do
+    tests("have the actions") do
       test("destroy") { db.respond_to? "destroy" }
-      test("destroy") { db.respond_to? "firewall_rules" }
+      test("firewall_rules") { db.respond_to? "firewall_rules" }
     end
 
     tests("have attributes") do
@@ -37,7 +37,8 @@ Shindo.tests("Fog::Compute[:azure] | database model", ["azure", "compute"]) do
         :name,
         :feature_name,
         :feature_value,
-        :location
+        :location,
+        :administrator_login
       ]
       tests("The database model should respond to") do
         attributes.each do |attribute|
@@ -46,5 +47,4 @@ Shindo.tests("Fog::Compute[:azure] | database model", ["azure", "compute"]) do
       end
     end
   end
-
 end
