@@ -24,7 +24,7 @@ module Fog
     class Azure
       class Real
         def delete_database(name)
-          @db_svc.delete_server(login, password, location)
+          @db_svc.delete_server(name)
         end
       end
 

@@ -29,15 +29,19 @@ module Fog
         model Fog::Compute::Azure::Database
 
         def all()
-          service.list_databases
+          databases = []
+          service.list_databases.each do |account|
+            hash = {}
+            account.instance_variables.each do |var|
+              hash[var.to_s.delete("@")] = account.instance_variable_get(var)
+            end
+            databases << hash
+          end
+          load(databases)
         end
 
         def create(login, password, location)
           service.create_database(login, password, location)
-        end
-
-        def delete(name)
-          service.delete_database(name)
         end
 
         def get(identity)

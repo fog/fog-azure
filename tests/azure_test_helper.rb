@@ -76,6 +76,11 @@ def storage_destroy
   storage.destroy if storage
 end
 
+def database_destroy
+  db = azure_service.databases.select {|s| s.name == database_name }.first
+  db.delete
+end
+
 at_exit do
   unless Fog.mocking?
     storage_destroy

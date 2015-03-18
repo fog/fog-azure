@@ -19,22 +19,35 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-require "fog/core/model"
+Shindo.tests("Fog::Compute[:azure] | database model", ["azure", "compute"]) do
 
-module Fog
-  module Compute
-    class Azure
-      class Database < Fog::Model
-        identity :name
-        attribute :feature_name
-        attribute :feature_value
-        attribute :location
+  service = Fog::Compute[:azure]
 
-        def destroy
-          requires :name
-          service.delete_database(name)
+  tests("The database model should") do
+    db  = service.databases.all.first
+    puts "The database class: #{db.class}"
+    tests("have the action") do
+      test("destroy") { db.respond_to? "destroy" }
+    end
+=begin
+    tests("have attributes") do
+      model_attribute_hash = image.attributes
+      attributes = [
+        :name,
+        :os_type
+      ]
+      tests("The image model should respond to") do
+        attributes.each do |attribute|
+          test("#{attribute}") { image.respond_to? attribute }
+        end
+      end
+      tests("The attributes hash should have key") do
+        attributes.each do |attribute|
+          test("#{attribute}") { model_attribute_hash.key? attribute }
         end
       end
     end
+=end
   end
+
 end
