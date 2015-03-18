@@ -32,6 +32,10 @@ module Fog
           service.list_databases
         end
 
+        def create(login, password, location)
+          service.create_database(login, password, location)
+        end
+
         def get(identity)
           # all.find { |f| f.name == identity }
         rescue Fog::Errors::NotFound

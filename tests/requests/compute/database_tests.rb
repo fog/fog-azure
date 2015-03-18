@@ -32,10 +32,13 @@ Shindo.tests("Fog::Compute[:azure] | database request", ["azure", "compute"]) do
       databases.all().is_a? Array
     end
 
-    # test("should return valid image name") do
-    #  images.first.name.is_a? String
-    # end
+    test("should return valid database name") do
+      databases.all().first.name.is_a? String
+     end
 
+    test("should create a new database") do
+      databases.create('login', 'password', 'US East').kind_of? ::Azure::SqlDatabaseManagement::SqlDatabase
+    end
     # test("should return records") do
     #  images.size >= 1
     # end

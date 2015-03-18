@@ -42,6 +42,7 @@ module Fog
       request :start_server
       request :list_images
       request :list_databases
+      request :create_database
 
       model_path "fog/azure/models/compute"
       model :server
