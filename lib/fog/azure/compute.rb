@@ -44,6 +44,7 @@ module Fog
       request :list_databases
       request :create_database
       request :delete_database
+      request :firewall_rules
 
       model_path "fog/azure/models/compute"
       model :server
