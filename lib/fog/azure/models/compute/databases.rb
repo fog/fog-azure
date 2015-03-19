@@ -41,7 +41,7 @@ module Fog
         end
 
         def create(login, password, location)
-          service.create_database(login, password, location)
+          service.create_database_server(login, password, location)
         end
       end
     end

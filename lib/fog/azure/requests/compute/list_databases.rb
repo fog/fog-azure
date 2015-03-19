@@ -24,7 +24,7 @@ module Fog
     class Azure
       class Real
         def list_databases
-          @db_svc.list_databases
+          @db_svc.list_servers
         end
       end
 

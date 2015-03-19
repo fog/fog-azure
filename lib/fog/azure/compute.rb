@@ -42,7 +42,7 @@ module Fog
       request :start_server
       request :list_images
       request :list_databases
-      request :create_database
+      request :create_database_server
       request :delete_database
       request :firewall_rules
 

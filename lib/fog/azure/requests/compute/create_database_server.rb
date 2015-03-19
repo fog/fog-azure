@@ -23,13 +23,13 @@ module Fog
   module Compute
     class Azure
       class Real
-        def create_database(login, password, location)
+        def create_database_server(login, password, location)
           @db_svc.create_server(login, password, location)
         end
       end
 
       class Mock
-        def create_database(login, password, location)
+        def create_database_server(login, password, location)
           db = ::Azure::SqlDatabaseManagement::SqlDatabase.new
           db.name = 'Mock Database'
           db.location = location

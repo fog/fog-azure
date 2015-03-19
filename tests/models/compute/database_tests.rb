@@ -45,9 +45,4 @@ Shindo.tests("Fog::Compute[:azure] | database model", ["azure", "compute"]) do
       end
     end
   end
-
-  tests("The database model without mocking should") do
-    pending if Fog.mocking?
-    # TODO: Fill these in when we AREN'T mocking and have an actual account for testing
-  end
 end
