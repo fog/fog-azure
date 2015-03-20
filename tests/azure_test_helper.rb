@@ -27,7 +27,6 @@ end
 def vm_attributes
   image = azure_service.images.select{|image| image.os_type == "Linux"}.first
   location = image.locations.split(";").first
-
   {
     :image  => image.name,
     :location => location,
@@ -74,11 +73,6 @@ end
 def storage_destroy
   storage = azure_service.storage_accounts.select { |s| s.name == storage_name }.first
   storage.destroy if storage
-end
-
-def database_destroy
-  db = azure_service.databases.select {|s| s.name == database_name }.first
-  db.delete
 end
 
 at_exit do

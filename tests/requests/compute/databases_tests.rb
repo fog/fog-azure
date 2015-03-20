@@ -39,10 +39,5 @@ Shindo.tests("Fog::Compute[:azure] | database request", ["azure", "compute"]) do
     test("should create a new database") do
       databases.create('AdvancedAdminU', 'NotARegPW!', 'South Central US').kind_of? ::Azure::SqlDatabaseManagement::SqlDatabase
     end
-
-    # test("should delete a database") do
-     # databases.all.first.destroy.equal? true
-    # end
   end
-
 end
