@@ -24,7 +24,7 @@ module Fog
     class Azure
       class Real
         def firewall_rules(name)
-          @db_svc.create_server(login, password, location)
+          @db_svc.list_sql_server_firewall_rules(name)
         end
       end
 
