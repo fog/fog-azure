@@ -27,7 +27,6 @@ end
 def vm_attributes
   image = azure_service.images.select{|image| image.os_type == "Linux"}.first
   location = image.locations.split(";").first
-
   {
     :image  => image.name,
     :location => location,
