@@ -162,3 +162,12 @@ image.locations
 image.category
 image.os_type
 ```
+
+## Listing rolesizes
+
+```ruby
+azure.role_sizes.each do | role_size|
+puts role_size
+end
+```
+

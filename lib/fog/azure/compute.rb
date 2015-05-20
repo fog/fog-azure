@@ -45,6 +45,7 @@ module Fog
       request :create_database_server
       request :delete_database
       request :firewall_rules
+      request :role_sizes
 
       model_path "fog/azure/models/compute"
       model :server
@@ -85,6 +86,7 @@ module Fog
           @stg_svc = ::Azure::StorageManagementService.new
           @image_svc = ::Azure::VirtualMachineImageManagementService.new
           @db_svc = ::Azure::SqlDatabaseManagementService.new
+          @base_svc = ::Azure::BaseManagementService.new
         end
       end
     end
