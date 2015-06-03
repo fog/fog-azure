@@ -24,7 +24,7 @@ azure = Fog::Compute.new(
   :provider => 'Azure',
   :azure_sub_id => '35a2461c-22ac-1111-5ed2-11165d755ba4',
   :azure_pem =>    'c:/path/abc.pem',
-  :azure_api_url => 'usnorth.management.core.windows.net'
+  :azure_api_url => 'management.core.windows.net'
 )
 ```
 
