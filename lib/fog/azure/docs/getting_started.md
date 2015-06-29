@@ -61,7 +61,7 @@ server = azure.servers.create(
 Following key value pairs can be used while creating a server.
 
 |     key               |  Description of values                                           |       Example       					          |
-| --------------------- |:----------------------------------------------------------------:| --------------------------------------------------------------------:|
+| --------------------- |:----------------------------------------------------------------:|:-------------------------------------------------------------------- |
 | :vm_name              | Name of the VM to be given. It should be unique.                 | "fog-server"                                                         |
 | :vm_user              | User name for the VM                                             | "foguser"                                                            |
 | :image                | Image to be used for creation of VM.                             | "0b11de9248dd4d87b18621318e037d37__RightImage-Ubuntu-12.04-x64-v13.4"|
@@ -71,8 +71,7 @@ Following key value pairs can be used while creating a server.
 | :winrm_transport      | Winrm transport protocol either 'http' or 'https'.(Optional)     | "https" or "http"                                                    |
 | :cloud_service_name   | Cloud service name.(Optional)                                    | "fog-server"                                                         |
 | :deployment_name      | Deployment name.(Optional)                                       | "fog-server"                                                         |
-| :tcp_endpoints        | Tcp end point.It should be comma separated list in the format    | "80:8081,443:9443"                                                   |
-|                       |  <publicport>:<privateport>.(Optional)                           |                                                                      |
+| :tcp_endpoints        | Tcp end point.It should be comma separated list in the format <publicport>:<privateport>.(Optional)   | "80:8081,443:9443"                            |
 | :private_key_file     | Path of private key file.(Optional)                              | "c:/path/id_rsa"                                                     |
 | :certificate_file     | Path of certificate file.(Optional)                              | "c:/path/cert.cert"                                                  |
 | :ssh_port             | Ssh port to be used.(Optional)                                   | "25"                                                                 |
