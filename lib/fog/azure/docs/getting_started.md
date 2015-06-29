@@ -71,7 +71,7 @@ Following key value pairs can be used while creating a server.
 | :winrm_transport      | Winrm transport protocol either 'http' or 'https'.(Optional)     | "https" or "http"                                                    |
 | :cloud_service_name   | Cloud service name.(Optional)                                    | "fog-server"                                                         |
 | :deployment_name      | Deployment name.(Optional)                                       | "fog-server"                                                         |
-| :tcp_endpoints        | Tcp end point.It should be comma separated list in the format <publicport>:<privateport>.(Optional)   | "80:8081,443:9443"                            |
+| :tcp_endpoints        | Tcp end point.It should be comma separated list in the format (publicport):(privateport).(Optional)   | "80:8081,443:9443"                            |
 | :private_key_file     | Path of private key file.(Optional)                              | "c:/path/id_rsa"                                                     |
 | :certificate_file     | Path of certificate file.(Optional)                              | "c:/path/cert.cert"                                                  |
 | :ssh_port             | Ssh port to be used.(Optional)                                   | "25"                                                                 |
