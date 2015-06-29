@@ -60,9 +60,8 @@ server = azure.servers.create(
 ```
 Following key value pairs can be used while creating a server.
 
- --------- -------------------------------------------------------------------------------------------------------------------------------------------------------
 |     key               |  Description of values                                           |       Example       					          |
- -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| --------------------- |:----------------------------------------------------------------:| --------------------------------------------------------------------:|
 | :vm_name              | Name of the VM to be given. It should be unique.                 | "fog-server"                                                         |
 | :vm_user              | User name for the VM                                             | "foguser"                                                            |
 | :image                | Image to be used for creation of VM.                             | "0b11de9248dd4d87b18621318e037d37__RightImage-Ubuntu-12.04-x64-v13.4"|
@@ -82,7 +81,6 @@ Following key value pairs can be used while creating a server.
 | :virtual_network_name | Virtual network name.(Optional)                                  | "fog-server-network"                                                 |
 | :subnet_name          | Subnet name.(Optional)                                           | "fog-server-subnet"                                                  |
 | :availability_set_name| Availability set name.(Optional)                                 | "fog-server-availability"                                            |
- -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Retrieve a single record
 
