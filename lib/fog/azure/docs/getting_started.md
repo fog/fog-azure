@@ -75,7 +75,7 @@ Following key value pairs can be used while creating a server.
 | :private_key_file     | Path of private key file.(Optional)                              | "c:/path/id_rsa"                                                     |
 | :certificate_file     | Path of certificate file.(Optional)                              | "c:/path/cert.cert"                                                  |
 | :ssh_port             | Ssh port to be used.(Optional)                                   | "25"                                                                 |
-| :vm_size              | Vm size.(Optional)                                               | "Standard_A1"                                                        |
+| :vm_size              | Vm/Role size.(Optional)                                          | "Standard_A1"                                                        |
 | :affinity_group_name  | Affinity group name.(Optional)                                   | "fog-server-group"                                                   |
 | :virtual_network_name | Virtual network name.(Optional)                                  | "fog-server-network"                                                 |
 | :subnet_name          | Subnet name.(Optional)                                           | "fog-server-subnet"                                                  |
