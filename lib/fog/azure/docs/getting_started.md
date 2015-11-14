@@ -24,7 +24,7 @@ azure = Fog::Compute.new(
   :provider => 'Azure',
   :azure_sub_id => '35a2461c-22ac-1111-5ed2-11165d755ba4',
   :azure_pem =>    'c:/path/abc.pem',
-  :azure_api_url => 'usnorth.management.core.windows.net'
+  :azure_api_url => 'management.core.windows.net'
 )
 ```
 
@@ -58,7 +58,28 @@ server = azure.servers.create(
     :storage_account_name => 'fogstorage'
 )
 ```
+Following key value pairs can be used while creating a server.
 
+|     key               |  Description of values                                           |       Example       					          |
+| --------------------- |:----------------------------------------------------------------:|:-------------------------------------------------------------------- |
+| :vm_name              | Name of the VM to be given. It should be unique.                 | "fog-server"                                                         |
+| :vm_user              | User name for the VM                                             | "foguser"                                                            |
+| :image                | Image to be used for creation of VM.                             | "0b11de9248dd4d87b18621318e037d37__RightImage-Ubuntu-12.04-x64-v13.4"|
+| :password             | Password to be used for authenticating above User name.          | "password@123"                                                       |
+| :location             | Data center location to be used for creation of VM.              | "West Europe"                                                        |
+| :storage_account_name | Storage account to be used for creation of VM.(Optional)         | "fog-storage"                                                        |
+| :winrm_transport      | Winrm transport protocol either 'http' or 'https'.(Optional)     | "https" or "http"                                                    |
+| :cloud_service_name   | Cloud service name.(Optional)                                    | "fog-server"                                                         |
+| :deployment_name      | Deployment name.(Optional)                                       | "fog-server"                                                         |
+| :tcp_endpoints        | Tcp end point.It should be comma separated list in the format (publicport):(privateport).(Optional)   | "80:8081,443:9443"                            |
+| :private_key_file     | Path of private key file.(Optional)                              | "c:/path/id_rsa"                                                     |
+| :certificate_file     | Path of certificate file.(Optional)                              | "c:/path/cert.cert"                                                  |
+| :ssh_port             | Ssh port to be used.(Optional)                                   | "25"                                                                 |
+| :vm_size              | Vm/Role size.(Optional)                                          | "Standard_A1"                                                        |
+| :affinity_group_name  | Affinity group name.(Optional)                                   | "fog-server-group"                                                   |
+| :virtual_network_name | Virtual network name.(Optional)                                  | "fog-server-network"                                                 |
+| :subnet_name          | Subnet name.(Optional)                                           | "fog-server-subnet"                                                  |
+| :availability_set_name| Availability set name.(Optional)                                 | "fog-server-availability"                                            |
 
 ## Retrieve a single record
 
@@ -162,3 +183,12 @@ image.locations
 image.category
 image.os_type
 ```
+
+## Listing rolesizes
+
+```ruby
+azure.role_sizes.each do | role_size|
+puts role_size
+end
+```
+
