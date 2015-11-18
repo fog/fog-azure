@@ -46,6 +46,7 @@ module Fog
       request :delete_database
       request :firewall_rules
       request :add_data_disk
+      request :get_virtual_machine
 
       model_path "fog/azure/models/compute"
       model :server
