@@ -27,12 +27,6 @@ module Fog
           @vm_svc.delete_virtual_machine(vm_name, cloud_service_name)
         end
       end
-
-      class Mock
-        def delete_virtual_machine(vm_name, cloud_service_name)
-          nil
-        end
-      end
     end
   end
 end

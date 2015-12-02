@@ -27,12 +27,6 @@ module Fog
           @db_svc.list_sql_server_firewall_rules(name)
         end
       end
-
-      class Mock
-        def firewall_rules(name)
-          nil
-        end
-      end
     end
   end
 end
