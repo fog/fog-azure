@@ -52,8 +52,26 @@ module Fog
         attribute :affinity_group_name
         attribute :subnet_name
         attribute :certificate_file
+        attribute :custom_data
 
         #helper functions for more common fog names
+        def reload
+          requires :identity
+          requires :cloud_service_name
+
+          data = begin
+            collection.get(identity, cloud_service_name)
+          rescue Excon::Errors::SocketError
+            nil
+          end
+
+          return unless data
+
+          new_attributes = data.attributes
+          merge_attributes(new_attributes)
+          self
+        end
+
         def external_ip
           ipaddress
         end
@@ -163,6 +181,7 @@ module Fog
             :image => image,
             :password => password,
             :location => location,
+            :custom_data => custom_data,
           }
           options = {
             :storage_account_name => storage_account_name,
