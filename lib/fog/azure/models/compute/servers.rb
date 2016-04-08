@@ -28,7 +28,7 @@ module Fog
       class Servers < Fog::Collection
         model Fog::Compute::Azure::Server
 
-        def all()
+        def all(options = {})
           servers = []
           service.list_virtual_machines.each do |vm|
             hash = {}
