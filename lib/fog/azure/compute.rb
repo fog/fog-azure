@@ -72,7 +72,8 @@ module Fog
       class Real
         def initialize(options)
           begin
-            require "azure"
+            require 'azure'
+            require 'azure/core'
           rescue LoadError => e
             retry if require("rubygems")
             raise e.message
