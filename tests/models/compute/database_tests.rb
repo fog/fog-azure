@@ -33,10 +33,11 @@ Shindo.tests("Fog::Compute[:azure] | database model", ["azure", "compute"]) do
     tests("have attributes") do
       attributes = [
         :name,
-        :feature_name,
-        :feature_value,
+        :administrator_login,
         :location,
-        :administrator_login
+        :fully_qualified_domain_name,
+        :version,
+        :state
       ]
       tests("The database model should respond to") do
         attributes.each do |attribute|

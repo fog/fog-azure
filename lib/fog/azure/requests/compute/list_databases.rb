@@ -30,10 +30,9 @@ module Fog
 
       class Mock
         def list_databases
-          db = ::Azure::SqlDatabaseManagement::SqlDatabase.new
+          db = ::Azure::SqlDatabaseManagement::SqlServer.new
           db.name = 'Mock Database'
           db.location = 'US East'
-          db.feature_name = 'feature name'
           [db]
         end
       end

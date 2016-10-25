@@ -26,10 +26,11 @@ module Fog
     class Azure
       class Database < Fog::Model
         identity :name
-        attribute :feature_name
-        attribute :feature_value
-        attribute :location
-        attribute :administrator_login
+        attr_accessor :administrator_login
+        attr_accessor :location
+        attr_accessor :fully_qualified_domain_name
+        attr_accessor :version
+        attr_accessor :state
 
         def destroy
           requires :name
