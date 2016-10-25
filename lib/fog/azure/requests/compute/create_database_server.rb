@@ -30,11 +30,10 @@ module Fog
 
       class Mock
         def create_database_server(login, password, location)
-          db = ::Azure::SqlDatabaseManagement::SqlDatabase.new
+          db = ::Azure::SqlDatabaseManagement::SqlServer.new
           db.name = 'Mock Database'
           db.location = location
-          db.feature_name = 'Mock Database'
-          db.feature_value = 'value'
+          db.version = '12.0'
           db
         end
       end

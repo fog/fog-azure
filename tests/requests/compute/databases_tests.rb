@@ -37,7 +37,7 @@ Shindo.tests("Fog::Compute[:azure] | database request", ["azure", "compute"]) do
      end
 
     test("should create a new database") do
-      databases.create('AdvancedAdminU', 'NotARegPW!', 'South Central US').kind_of? ::Azure::SqlDatabaseManagement::SqlDatabase
+      databases.create('AdvancedAdminU', 'NotARegPW!', 'South Central US').kind_of? ::Azure::SqlDatabaseManagement::SqlServer
     end
   end
 end
