@@ -19,7 +19,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-module Azure # deviates from other bin stuff to accomodate gem
+module Azure # deviates from other bin stuff to accommodate gem
   class << self
     def class_for(key)
       case key
