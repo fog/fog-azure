@@ -19,7 +19,6 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-require "fog/azure/core"
 
 module Fog
   module Compute
@@ -29,7 +28,7 @@ module Fog
 
       recognizes  :azure_api_url
 
-      request_path "fog/azure/requests/compute"
+      request_path "fog/compute/azure/requests"
       request :list_virtual_machines
       request :create_virtual_machine
       request :delete_virtual_machine
@@ -48,7 +47,7 @@ module Fog
       request :add_data_disk
       request :get_virtual_machine
 
-      model_path "fog/azure/models/compute"
+      model_path "fog/compute/azure/models"
       model :server
       collection :servers
       model :storage_account

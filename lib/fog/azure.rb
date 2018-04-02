@@ -19,11 +19,16 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-require 'fog/azure/version'
-require 'fog/azure/core'
-require 'fog/azure/compute'
+require 'fog/core'
+require_relative 'azure/version'
 
 module Fog
   module Azure
+    extend Fog::Provider
+    service(:compute, "Compute")
+  end
+
+  module Compute
+    autoload :Azure, File.expand_path('../fog/compute/azure', __FILE__)
   end
 end

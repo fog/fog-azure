@@ -20,24 +20,24 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 require "fog/core/collection"
-require "fog/azure/models/compute/image"
+require "fog/compute/azure/models/storage_account"
 
 module Fog
   module Compute
     class Azure
-      class Images < Fog::Collection
-        model Fog::Compute::Azure::Image
+      class StorageAccounts < Fog::Collection
+        model Fog::Compute::Azure::StorageAccount
 
         def all()
-          images = []
-          service.list_images.each do |image|
+          accounts = []
+          service.list_storage_accounts.each do |account|
             hash = {}
-            image.instance_variables.each do |var|
-              hash[var.to_s.delete("@")] = image.instance_variable_get(var)
+            account.instance_variables.each do |var|
+              hash[var.to_s.delete("@")] = account.instance_variable_get(var)
             end
-            images << hash
+            accounts << hash
           end
-          load(images)
+          load(accounts)
         end
 
         def get(identity)
@@ -45,6 +45,7 @@ module Fog
         rescue Fog::Errors::NotFound
           nil
         end
+
       end
     end
   end

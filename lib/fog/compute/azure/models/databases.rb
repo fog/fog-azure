@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 require "fog/core/collection"
-require "fog/azure/models/compute/database"
+require "fog/compute/azure/models/database"
 
 module Fog
   module Compute
