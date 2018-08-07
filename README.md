@@ -1,31 +1,10 @@
 # Fog::Azure
+This repository is depreciated since  to Azure Service Management support was retired on June 30, 2018. After that, Azure App Service resource management will be supported only through Azure Resource Manager. This repo is kept for documentation purposes. 
 
-Module for the 'fog' gem to support Windows Azure
+## Please use [fog/fog-azure-rm](https://github.com/fog/fog-azure-rm/) instead. 
 
-## Installation
 
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'fog-azure'
-```
 
-And then execute:
 
-    $ bundle
 
-Or install it yourself as:
-
-    $ gem install fog-azure
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/fog/fog-azure/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
